@@ -484,3 +484,5 @@ $RECYCLE.BIN/
 *.swp
 API/SocialMedea.db
 API/appsettings.json
+API/SocialMedea.db-shm
+API/SocialMedea.db-wal
