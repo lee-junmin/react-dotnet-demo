@@ -52,20 +52,22 @@ prop + enter will create a snippet
 - [text](https://github.com/TryCatchLearn/Reactivities/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/BaseApiController.cs)
 - [text](https://github.com/TryCatchLearn/Reactivities/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/ActivitiesController.cs)
 
-# React
+# React Skeleton
 
-## 17/18/19/20
+
 - install vite (changes project to javascript)
 - ✏️ create project in solution folder `npm create vite@latest` name client Typescript + SWC then follow instructions for npm install etc
 - now we can access with localhost
 - change port to 3000 at vite.config.ts [text](https://github.com/TryCatchLearn/Reactivities/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/vite.config.ts)
 - make the function simple at src/App.tsx
 - install vscode extension ES7+React/Redux.. by dsznajder and ESLint by MS
-
-## 19/20
 - write hooks in App component [text](https://github.com/TryCatchLearn/Reactivities/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/src/App.tsx)
 - make /src/lib/types/index.d.ts file and use transform.tools/json-to-typescript
 - install material ui and update app compoment to use it
 - use https via vite `npm install -D vite-plugin-mkcert` and add plugin to the vite.config.ts file
 - install axios
+
+# CRUD with CQRS + Mediator Pattern
+- install nuget package mediatr@Jimmy Bogard to Application project
+- create folder Activities/Queries and create GetActivityList class
   
