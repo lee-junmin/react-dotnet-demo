@@ -69,5 +69,5 @@ prop + enter will create a snippet
 
 # CRUD with CQRS + Mediator Pattern
 - install nuget package mediatr@Jimmy Bogard to Application project
-- create folder Activities/Queries and create GetActivityList class
+- create folder Activities/Queries and create GetActivityList class with Query and Handler
   
