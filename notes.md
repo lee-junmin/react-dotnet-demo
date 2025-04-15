@@ -74,4 +74,7 @@ prop + enter will create a snippet
 - add httppost to ActivitiesController
 - edit activity: add to add EditActivity to Command folder and add HttpPut to Activities Controller
 - Automapper: install AutoMapper@Jimmy Bogard to Application project
-  
+
+# Create CRUD in React
+- fixed file structure
+- 93XMW make nav bar component
