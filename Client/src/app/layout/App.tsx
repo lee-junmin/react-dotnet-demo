@@ -31,7 +31,12 @@ function App() {
         throw new Error("Function not implemented.");
       }} />
       <Container maxWidth='xl' sx={{ mt: 3}}>
-        <WorkshopDashboard workshops={workshops}/>
+        <WorkshopDashboard 
+          workshops={workshops} 
+          selectWorkshop={handleSelectWorkshop} 
+          cancelSelectWorkshop={handleCancelSelectWorkshop}
+          selectedWorkshop={selectedWorkshop}
+        />
       </Container>
     </Box>
 
