@@ -80,3 +80,4 @@ prop + enter will create a snippet
 - fixed file structure
 - 93XMW make nav bar component
 - P5DHF add material ui to nav bar
+  - P5DHF add CSS base line for nav bar
