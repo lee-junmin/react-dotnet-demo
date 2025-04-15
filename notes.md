@@ -70,4 +70,8 @@ prop + enter will create a snippet
 # CRUD with CQRS + Mediator Pattern
 - install nuget package mediatr@Jimmy Bogard to Application project
 - create folder Activities/Queries and create GetActivityList class with Query and Handler
+- Move Mediator to the BaseApiController as a property and remove all constuctors
+- add httppost to ActivitiesController
+- edit activity: add to add EditActivity to Command folder and add HttpPut to Activities Controller
+- Automapper: install AutoMapper@Jimmy Bogard to Application project
   
