@@ -482,8 +482,8 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-API/SocialMedea.db
+API/Workshop.db
 API/appsettings.json
-API/SocialMedea.db-shm
-API/SocialMedea.db-wal
+API/Workshop.db-shm
+API/Workshop.db-wal
 notes.md

@@ -12,7 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@fontsource/meow-script": "^5.2.5",
     "@fontsource/roboto": "^5.2.5",
+    "@fontsource/square-peg": "^5.2.5",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "axios": "^1.8.4",

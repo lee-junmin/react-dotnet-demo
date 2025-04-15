@@ -1,4 +1,4 @@
-import { Group } from "@mui/icons-material";
+
 import { Box, AppBar, Toolbar, Typography, Button, Container, MenuItem } from "@mui/material";
 
 type Props = {
@@ -14,8 +14,14 @@ export default function NavBar({ openForm }: Props) {
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Box>
                             <MenuItem sx={{ display: 'flex', gap: 2 }}>
-                                <Group fontSize="large" />
-                                <Typography variant="h4" fontWeight='bold'>WorkshopHub</Typography>
+
+                                <Typography
+                                    variant="h2"
+                                    fontWeight='bold'
+                                    sx={{ fontFamily: '"Square Peg", cursive'}}
+                                >
+                                    workshopPortal
+                                </Typography>
                             </MenuItem>
                         </Box>
                         <Box sx={{ display: 'flex' }}>
@@ -35,9 +41,9 @@ export default function NavBar({ openForm }: Props) {
                                 Contact
                             </MenuItem>
                         </Box>
-                        <Button 
-                            size="large" 
-                            variant="contained" 
+                        <Button
+                            size="large"
+                            variant="contained"
                             color="secondary"
                             onClick={openForm}
                         >
