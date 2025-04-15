@@ -76,5 +76,6 @@ prop + enter will create a snippet
 - Automapper: install AutoMapper@Jimmy Bogard to Application project
 
 # Create CRUD in React
+
 - fixed file structure
 - 93XMW make nav bar component
