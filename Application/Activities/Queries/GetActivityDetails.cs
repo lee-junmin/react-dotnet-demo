@@ -4,22 +4,22 @@ using MediatR;
 using Domain;
 using Persistence;
 
-namespace Application.Activities.Queries;
+namespace Application.Workshops.Queries;
 
-public class GetActivityDetails
+public class GetWorkshopDetails
 {
-    public class Query : IRequest<Activity>
+    public class Query : IRequest<Workshop>
     {
         public required string Id { get; set; }
     }
 
-    public class Handler(AppDbContext context) : IRequestHandler<Query, Activity>
+    public class Handler(AppDbContext context) : IRequestHandler<Query, Workshop>
     {
-        public async Task<Activity> Handle(Query request, CancellationToken cancellationToken)
+        public async Task<Workshop> Handle(Query request, CancellationToken cancellationToken)
         {
-            var activity = await context.Activities.FindAsync([request.Id], cancellationToken);
-            if (activity == null) throw new Exception("Activity not found");
-            return activity;
+            var workshop = await context.Workshops.FindAsync([request.Id], cancellationToken);
+            if (workshop == null) throw new Exception("Workshop not found");
+            return workshop;
         }
     }
 }

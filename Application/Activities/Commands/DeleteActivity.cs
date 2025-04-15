@@ -3,9 +3,9 @@ using MediatR;
 using Persistence;
 using Domain;
 
-namespace Application.Activities.Commands;
+namespace Application.Workshops.Commands;
 
-public class DeleteActivity
+public class DeleteWorkshop
 {
     public class Command : IRequest
     {
@@ -16,9 +16,9 @@ public class DeleteActivity
     {
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
-            var activity = await context.Activities.FindAsync([request.Id], cancellationToken)
-                ?? throw new Exception("No activity found");
-            context.Remove(activity);
+            var workshop = await context.Workshops.FindAsync([request.Id], cancellationToken)
+                ?? throw new Exception("No workshop found");
+            context.Remove(workshop);
             await context.SaveChangesAsync(cancellationToken);
 
         }

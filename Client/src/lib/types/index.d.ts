@@ -1,4 +1,4 @@
-type Activity = {
+type Workshop = {
     id: string
     title: string
     date: string

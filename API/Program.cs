@@ -1,4 +1,4 @@
-using Application.Activities.Queries;
+using Application.Workshops.Queries;
 using Application.Core;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -13,7 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 });
 builder.Services.AddCors();
 builder.Services.AddMediatR(x => 
-    x.RegisterServicesFromAssemblyContaining<GetActivityList.Handler>());
+    x.RegisterServicesFromAssemblyContaining<GetWorkshopList.Handler>());
 builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 var app = builder.Build();
 

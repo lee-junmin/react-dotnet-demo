@@ -4,22 +4,22 @@ using Domain;
 using Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Activities.Commands;
+namespace Application.Workshops.Commands;
 
-public class CreateActivity
+public class CreateWorkshop
 {
     public class Command : IRequest<string>
     {
-        public required Activity Activity { get; set; }
+        public required Workshop Workshop { get; set; }
     }
 
     public class Handler(AppDbContext context) : IRequestHandler<Command, string>
     {
         public async Task<string> Handle(Command request, CancellationToken cancellationToken)
         {
-            context.Activities.Add(request.Activity);
+            context.Workshops.Add(request.Workshop);
             await context.SaveChangesAsync(cancellationToken);
-            return request.Activity.Id;
+            return request.Workshop.Id;
         }
     }
 }

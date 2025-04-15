@@ -4,24 +4,24 @@ using Domain;
 using MediatR;
 using Persistence;
 
-namespace Application.Activities.Commands;
+namespace Application.Workshops.Commands;
 
-public class EditActivity
+public class EditWorkshop
 {
     public class Command : IRequest
     {
-        public required Activity Activity { get; set; }
+        public required Workshop Workshop { get; set; }
     }
 
     public class Handler(AppDbContext context, IMapper mapper) : IRequestHandler<Command>
     {
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
-            var activity = await context.Activities
-                .FindAsync([request.Activity.Id], cancellationToken) 
-                    ?? throw new Exception("Cannot find activity");
+            var workshop = await context.Workshops
+                .FindAsync([request.Workshop.Id], cancellationToken) 
+                    ?? throw new Exception("Cannot find workshop");
 
-            mapper.Map(request.Activity, activity);
+            mapper.Map(request.Workshop, workshop);
 
             await context.SaveChangesAsync(cancellationToken);
         }

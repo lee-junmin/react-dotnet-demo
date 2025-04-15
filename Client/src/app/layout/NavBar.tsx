@@ -41,7 +41,7 @@ export default function NavBar({ openForm }: Props) {
                             color="secondary"
                             onClick={openForm}
                         >
-                            Create activity
+                            Create workshop
                         </Button>
                     </Toolbar>
                 </Container>

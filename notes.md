@@ -12,7 +12,7 @@ API --> Application --> Persistence
 
 
 ## 8 domain
-create entity called Activity and add properties
+create entity called Workshop and add properties
 prop + enter will create a snippet
  <Nullable>enable</Nullable>  compiler warns you if a non-null variable is used before it’s set, or if a null might slip through. use string? for makin exception 
  how to make property required `public required string Description { get; set; }`
@@ -45,12 +45,12 @@ prop + enter will create a snippet
   
 ## 11 database seeding
 - create new class DbInitializer.cs in Peristence project
-  - create method [text](https://github.com/TryCatchLearn/Reactivities/blob/b9667a049b36b552dfebfdb87a0d1417a7cc9e65/Persistence/DbInitializer.cs)
-- run the above SeedData method https://github.com/TryCatchLearn/Reactivities/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Program.cs 
+  - create method [text](https://github.com/TryCatchLearn/Reworkshops/blob/b9667a049b36b552dfebfdb87a0d1417a7cc9e65/Persistence/DbInitializer.cs)
+- run the above SeedData method https://github.com/TryCatchLearn/Reworkshops/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Program.cs 
 
 ## 12 API controller
-- [text](https://github.com/TryCatchLearn/Reactivities/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/BaseApiController.cs)
-- [text](https://github.com/TryCatchLearn/Reactivities/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/ActivitiesController.cs)
+- [text](https://github.com/TryCatchLearn/Reworkshops/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/BaseApiController.cs)
+- [text](https://github.com/TryCatchLearn/Reworkshops/blob/d3632a6efa06463808c7b56a77cbdd67bd11ddd7/API/Controllers/WorkshopsController.cs)
 
 # React Skeleton
 
@@ -58,10 +58,10 @@ prop + enter will create a snippet
 - install vite (changes project to javascript)
 - ✏️ create project in solution folder `npm create vite@latest` name client Typescript + SWC then follow instructions for npm install etc
 - now we can access with localhost
-- change port to 3000 at vite.config.ts [text](https://github.com/TryCatchLearn/Reactivities/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/vite.config.ts)
+- change port to 3000 at vite.config.ts [text](https://github.com/TryCatchLearn/Reworkshops/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/vite.config.ts)
 - make the function simple at src/App.tsx
 - install vscode extension ES7+React/Redux.. by dsznajder and ESLint by MS
-- write hooks in App component [text](https://github.com/TryCatchLearn/Reactivities/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/src/App.tsx)
+- write hooks in App component [text](https://github.com/TryCatchLearn/Reworkshops/blob/9fff80e8f77af8c67c77aa9fa403f02dcf68af2e/client/src/App.tsx)
 - make /src/lib/types/index.d.ts file and use transform.tools/json-to-typescript
 - install material ui and update app compoment to use it
 - use https via vite `npm install -D vite-plugin-mkcert` and add plugin to the vite.config.ts file
@@ -69,10 +69,10 @@ prop + enter will create a snippet
 
 # CRUD with CQRS + Mediator Pattern
 - install nuget package mediatr@Jimmy Bogard to Application project
-- create folder Activities/Queries and create GetActivityList class with Query and Handler
+- create folder Workshops/Queries and create GetWorkshopList class with Query and Handler
 - Move Mediator to the BaseApiController as a property and remove all constuctors
-- add httppost to ActivitiesController
-- edit activity: add to add EditActivity to Command folder and add HttpPut to Activities Controller
+- add httppost to WorkshopsController
+- edit workshop: add to add EditWorkshop to Command folder and add HttpPut to Workshops Controller
 - Automapper: install AutoMapper@Jimmy Bogard to Application project
 
 # Create CRUD in React

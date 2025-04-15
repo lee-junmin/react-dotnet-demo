@@ -1,6 +1,6 @@
 
-using Application.Activities.Commands;
-using Application.Activities.Queries;
+using Application.Workshops.Commands;
+using Application.Workshops.Queries;
 using Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -9,37 +9,37 @@ using Microsoft.CodeAnalysis.Differencing;
 
 namespace API.Controllers;
 
-public class ActivitiesController: BaseApiController
+public class WorkshopsController: BaseApiController
 {
     [HttpGet]
-    public async Task<ActionResult<List<Activity>>> GetActivities()
+    public async Task<ActionResult<List<Workshop>>> GetWorkshops()
     {
-        return await Mediator.Send(new GetActivityList.Query());
+        return await Mediator.Send(new GetWorkshopList.Query());
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Activity>> GetActivityDetail(string id)
+    public async Task<ActionResult<Workshop>> GetWorkshopDetail(string id)
     {
-        return await Mediator.Send(new GetActivityDetails.Query{Id = id});
+        return await Mediator.Send(new GetWorkshopDetails.Query{Id = id});
     }
 
     [HttpPost]
-    public async Task<ActionResult<string>> CreateActivity(Activity activity)
+    public async Task<ActionResult<string>> CreateWorkshop(Workshop workshop)
     {
-        return await Mediator.Send(new CreateActivity.Command{Activity = activity});
+        return await Mediator.Send(new CreateWorkshop.Command{Workshop = workshop});
     }
 
     [HttpPut]
-    public async Task<ActionResult> EditActivity(Activity activity)
+    public async Task<ActionResult> EditWorkshop(Workshop workshop)
     {
-        await Mediator.Send(new EditActivity.Command{Activity = activity});
+        await Mediator.Send(new EditWorkshop.Command{Workshop = workshop});
         return NoContent();
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteActivity(string id)
+    public async Task<ActionResult> DeleteWorkshop(string id)
     {
-        await Mediator.Send(new DeleteActivity.Command{ Id = id });
+        await Mediator.Send(new DeleteWorkshop.Command{ Id = id });
         return Ok();
 
     }

@@ -4,20 +4,20 @@ using Persistence;
 using Domain;
 
 
-namespace Application.Activities.Queries;
+namespace Application.Workshops.Queries;
 
-    public class GetActivityList
+    public class GetWorkshopList
     {
-        public class Query : IRequest<List<Activity>>
+        public class Query : IRequest<List<Workshop>>
         {
 
         }
 
-        public class Handler(AppDbContext context) : IRequestHandler<Query, List<Activity>>
+        public class Handler(AppDbContext context) : IRequestHandler<Query, List<Workshop>>
         {
-            public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<Workshop>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await context.Activities.ToListAsync(cancellationToken);
+                return await context.Workshops.ToListAsync(cancellationToken);
             }
 
         }

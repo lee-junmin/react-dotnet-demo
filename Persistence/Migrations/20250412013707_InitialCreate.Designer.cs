@@ -20,7 +20,7 @@ namespace Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
-            modelBuilder.Entity("Domain.Activity", b =>
+            modelBuilder.Entity("Domain.Workshop", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -59,7 +59,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Activities");
+                    b.ToTable("Workshops");
                 });
 #pragma warning restore 612, 618
         }

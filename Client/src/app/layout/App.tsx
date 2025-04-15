@@ -5,11 +5,11 @@ import NavBar from "./NavBar";
 
 function App() {
 
-  const [activities, setActivities] = useState<Activity[]>([]);
+  const [workshops, setWorkshops] = useState<Workshop[]>([]);
 
   useEffect(() => {
-    axios.get("https://localhost:5001/api/Activities")
-      .then(response => setActivities(response.data))
+    axios.get("https://localhost:5001/api/Workshops")
+      .then(response => setWorkshops(response.data))
     return () => { }
   }, [])
 
@@ -21,9 +21,9 @@ function App() {
       }} />
       <Container maxWidth='xl' sx={{ mt: 3}}>
         <List>
-          {activities.map((activity) => (
-            <ListItem key={activity.id}>
-              <ListItemText>{activity.title}</ListItemText>
+          {workshops.map((workshop) => (
+            <ListItem key={workshop.id}>
+              <ListItemText>{workshop.title}</ListItemText>
             </ListItem>
           ))}
         </List>
