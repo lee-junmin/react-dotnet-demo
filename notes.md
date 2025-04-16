@@ -75,10 +75,13 @@ prop + enter will create a snippet
 - edit workshop: add to add EditWorkshop to Command folder and add HttpPut to Workshops Controller
 - Automapper: install AutoMapper@Jimmy Bogard to Application project
 
-# Create CRUD in React
+# 5 Create CRUD in React
 
 - fixed file structure
 - 93XMW make nav bar component
 - P5DHF add material ui to nav bar
   - P5DHF add CSS base line for nav bar
 - RKMQA add style to CSS with material UI
+
+# 6 React Query
+- VOEO9 setup react query 
