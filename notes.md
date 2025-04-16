@@ -86,3 +86,4 @@ prop + enter will create a snippet
 - VOEO9 setup react query 
 - `npm i @tanstack/react-query-devtools`
 - PZM6E add react query dev tools
+- PQY24 extend the loading background full height
