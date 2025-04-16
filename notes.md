@@ -54,7 +54,6 @@ prop + enter will create a snippet
 
 # React Skeleton
 
-
 - install vite (changes project to javascript)
 - ✏️ create project in solution folder `npm create vite@latest` name client Typescript + SWC then follow instructions for npm install etc
 - now we can access with localhost
@@ -85,3 +84,5 @@ prop + enter will create a snippet
 
 # 6 React Query
 - VOEO9 setup react query 
+- `npm i @tanstack/react-query-devtools`
+- PZM6E add react query dev tools
