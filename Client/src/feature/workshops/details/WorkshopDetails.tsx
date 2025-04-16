@@ -3,7 +3,7 @@ import { Card, CardContent, CardMedia, Button, CardActions, Typography } from "@
 type Props = {
     workshop: Workshop
     cancelSelectWorkshop: () => void
-    openForm: () => void
+    openForm: (id: string) => void
 }
 export default function WorkshopDetails({workshop, cancelSelectWorkshop, openForm}: Props) {
   return (
@@ -17,7 +17,7 @@ export default function WorkshopDetails({workshop, cancelSelectWorkshop, openFor
             <Typography variant = "body1">{workshop.description}</Typography>
         </CardContent>
         <CardActions>
-            <Button onClick={openForm} color="primary">Edit</Button>
+            <Button onClick={() => openForm(workshop.id)} color="primary">Edit</Button>
             <Button onClick={cancelSelectWorkshop} color="inherit">Cancel</Button>
         </CardActions>
     </Card>

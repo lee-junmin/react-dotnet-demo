@@ -8,7 +8,7 @@ type Props = {
 
   }
 
-export default function WorkshopCard({ workshop, selectWorkshop}: Props) {
+export default function WorkshopCard({workshop, selectWorkshop}: Props) {
     return (
       <Card sx={{ borderRadius: 3 }}>
         <CardContent>
@@ -20,12 +20,9 @@ export default function WorkshopCard({ workshop, selectWorkshop}: Props) {
         <CardActions sx={{ display: 'flex', justifyContent: 'space-between', pb: 2 }}>
         <Chip label={workshop.category} variant="outlined" />
         <Box display='flex' gap={3}>
-          <Button onClick={() => 
-            selectWorkshop(workshop.id)
-          
 
-
-            } size="medium" variant="contained">View</Button>
+          <Button onClick={() => selectWorkshop(workshop.id)} size="medium" variant="contained">View</Button>
+        
         </Box>
       </CardActions>
       </Card>

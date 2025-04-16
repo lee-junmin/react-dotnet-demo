@@ -20,10 +20,8 @@ export default function WorkshopDashboard({workshops, selectWorkshop, cancelSele
           <WorkshopList workshops={workshops} selectWorkshop={selectWorkshop}/>
       </Grid>
       <Grid size={6}>
-         {selectedWorkshop && <WorkshopDetails workshop={selectedWorkshop} cancelSelectWorkshop={cancelSelectWorkshop} openForm={openForm} /> }
-         {editMode && <WorkshopForm closeForm={closeForm}></WorkshopForm>}
-
-
+         {selectedWorkshop && !editMode && <WorkshopDetails cancelSelectWorkshop={cancelSelectWorkshop} openForm={openForm} workshop={selectedWorkshop} /> }
+         {editMode && <WorkshopForm closeForm={closeForm} workshop={selectedWorkshop}></WorkshopForm>}
       </Grid>
     </Grid>
   )
