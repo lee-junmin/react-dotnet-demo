@@ -1,6 +1,10 @@
 import { Box, TextField, Typography, Button, Paper } from "@mui/material";
 
-export default function WorkshopForm() {
+type Props ={
+  closeForm: () => void
+}
+
+export default function WorkshopForm({closeForm} :Props) {
   return (
     <Paper sx={{ borderRadius: 3, padding: 3 }}>
     <Typography variant="h5" gutterBottom color="primary">
@@ -14,7 +18,7 @@ export default function WorkshopForm() {
         <TextField name='city' label='City'  />
         <TextField name='venue' label='Venue'  />
         <Box display='flex' justifyContent='end' gap={3}>
-            <Button  color='inherit'>Cancel</Button>
+            <Button onClick={closeForm} color='inherit'>Cancel</Button>
             <Button type="submit" color='success' variant="contained">Submit</Button>
         </Box>
     </Box>

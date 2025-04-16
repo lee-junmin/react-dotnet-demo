@@ -3,8 +3,9 @@ import { Card, CardContent, CardMedia, Button, CardActions, Typography } from "@
 type Props = {
     workshop: Workshop
     cancelSelectWorkshop: () => void
+    openForm: () => void
 }
-export default function WorkshopDetails({workshop, cancelSelectWorkshop}: Props) {
+export default function WorkshopDetails({workshop, cancelSelectWorkshop, openForm}: Props) {
   return (
     <Card>
         <CardMedia 
@@ -16,7 +17,7 @@ export default function WorkshopDetails({workshop, cancelSelectWorkshop}: Props)
             <Typography variant = "body1">{workshop.description}</Typography>
         </CardContent>
         <CardActions>
-            <Button color="primary">Edit</Button>
+            <Button onClick={openForm} color="primary">Edit</Button>
             <Button onClick={cancelSelectWorkshop} color="inherit">Cancel</Button>
         </CardActions>
     </Card>

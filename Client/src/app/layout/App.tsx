@@ -9,6 +9,7 @@ function App() {
 
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
   const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | undefined>(undefined);
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     axios.get("https://localhost:5001/api/Workshops")
@@ -24,18 +25,29 @@ function App() {
     setSelectedWorkshop(undefined)
   }
 
+  const handleOpenForm = (id?:string) => {
+    if (id) handleSelectWorkshop(id)
+    else handleCancelSelectWorkshop()
+    setEditMode(true)
+  }
+
+  const handleCloseForm = () => {
+    setEditMode(false)
+  }
+
   return (
     <Box sx={{bgcolor: "#eeeeee"}}>
       <CssBaseline />
-      <NavBar openForm={function (): void {
-        throw new Error("Function not implemented.");
-      }} />
+      <NavBar openForm={handleOpenForm} />
       <Container maxWidth='xl' sx={{ mt: 3}}>
         <WorkshopDashboard 
           workshops={workshops} 
           selectWorkshop={handleSelectWorkshop} 
           cancelSelectWorkshop={handleCancelSelectWorkshop}
           selectedWorkshop={selectedWorkshop}
+          editMode={editMode}
+          openForm={handleOpenForm}
+          closeForm={handleCloseForm}
         />
       </Container>
     </Box>
