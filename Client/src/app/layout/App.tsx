@@ -39,10 +39,17 @@ function App() {
     if (workshop.id) {
       setWorkshops(workshops.map(x => x.id === workshop.id ? workshop : x))
     } else {
-      setWorkshops([...workshops, {...workshop, id: workshops.length.toString()}])
+      const newWorkshop = {...workshop, id: workshops.length.toString()}
+      setSelectedWorkshop(newWorkshop)
+      setWorkshops([...workshops, newWorkshop])
     }
+    setEditMode(false)
   }
 
+  const handleDelete = (id: string) => {
+    console.log("delete workhop", id)
+    setWorkshops(workshops.filter(x => x.id !== id))
+  }
 
   return (
     <Box sx={{bgcolor: "#eeeeee"}}>
@@ -58,6 +65,7 @@ function App() {
           openForm={handleOpenForm}
           closeForm={handleCloseForm}
           submitForm={handleSubmitForm}
+          deleteWorkshop={handleDelete}
         />
       </Container>
     </Box>

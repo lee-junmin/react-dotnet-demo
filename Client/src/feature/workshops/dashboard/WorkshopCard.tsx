@@ -5,10 +5,11 @@ import { Card,CardContent,CardActions, Chip, Button,Typography, Box } from "@mui
 type Props = {
     workshop: Workshop
     selectWorkshop: (id: string) => void
+    deleteWorkshop: (id: string) => void
 
   }
 
-export default function WorkshopCard({workshop, selectWorkshop}: Props) {
+export default function WorkshopCard({workshop, selectWorkshop, deleteWorkshop}: Props) {
     return (
       <Card sx={{ borderRadius: 3 }}>
         <CardContent>
@@ -19,9 +20,10 @@ export default function WorkshopCard({workshop, selectWorkshop}: Props) {
         </CardContent>
         <CardActions sx={{ display: 'flex', justifyContent: 'space-between', pb: 2 }}>
         <Chip label={workshop.category} variant="outlined" />
-        <Box display='flex' gap={3}>
+        <Box display='flex' gap={2}>
 
           <Button onClick={() => selectWorkshop(workshop.id)} size="medium" variant="contained">View</Button>
+          <Button onClick={() => deleteWorkshop(workshop.id)} size="medium" sx={{ mr: 2 }} color= "error" variant="contained">Delete</Button>
         
         </Box>
       </CardActions>

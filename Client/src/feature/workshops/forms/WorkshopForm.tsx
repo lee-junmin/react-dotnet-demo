@@ -28,12 +28,12 @@ export default function WorkshopForm({workshop,closeForm, submitForm} :Props) {
         Create workshop
     </Typography>
     <Box component='form' onSubmit={handleSubmit} display='flex' flexDirection='column' gap={3}>
-        <TextField name='title' label='Title' value={workshop?.title}  />
-        <TextField name='description' label='Description'  multiline rows={3} value={workshop?.description} />
-        <TextField name='category' label='Category' value={workshop?.category} />
-        <TextField name='date' label='Date' type="date" value={workshop?.date}  />
-        <TextField name='city' label='City' value={workshop?.city} />
-        <TextField name='venue' label='Venue' value={workshop?.venue} />
+        <TextField name='title' label='Title' defaultValue={workshop?.title}  />
+        <TextField name='description' label='Description'  multiline rows={3} defaultValue={workshop?.description} />
+        <TextField name='category' label='Category' defaultValue={workshop?.category} />
+        <TextField name='date' label='Date' type="date" defaultValue={workshop?.date}  />
+        <TextField name='city' label='City' defaultValue={workshop?.city} />
+        <TextField name='venue' label='Venue' defaultValue={workshop?.venue} />
         <Box display='flex' justifyContent='end' gap={3}>
             <Button onClick={closeForm} color='inherit'>Cancel</Button>
             <Button type="submit" color='success' variant="contained">Submit</Button>
