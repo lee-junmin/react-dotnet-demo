@@ -35,6 +35,15 @@ function App() {
     setEditMode(false)
   }
 
+  const handleSubmitForm = (workshop: Workshop) => {
+    if (workshop.id) {
+      setWorkshops(workshops.map(x => x.id === workshop.id ? workshop : x))
+    } else {
+      setWorkshops([...workshops, {...workshop, id: workshops.length.toString()}])
+    }
+  }
+
+
   return (
     <Box sx={{bgcolor: "#eeeeee"}}>
       <CssBaseline />
@@ -48,6 +57,7 @@ function App() {
           editMode={editMode}
           openForm={handleOpenForm}
           closeForm={handleCloseForm}
+          submitForm={handleSubmitForm}
         />
       </Container>
     </Box>

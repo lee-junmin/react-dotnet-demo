@@ -11,9 +11,10 @@ type Props = {
   openForm: (id:string) => void
   closeForm: () => void
   editMode: boolean
+  submitForm: (workshop: Workshop) => void
 }
 
-export default function WorkshopDashboard({workshops, selectWorkshop, cancelSelectWorkshop, selectedWorkshop, editMode, openForm, closeForm}: Props) {
+export default function WorkshopDashboard({workshops, selectWorkshop, cancelSelectWorkshop, selectedWorkshop, editMode, openForm, closeForm, submitForm}: Props) {
   return (
     <Grid container spacing={3}>
       <Grid size={6}>
@@ -21,7 +22,7 @@ export default function WorkshopDashboard({workshops, selectWorkshop, cancelSele
       </Grid>
       <Grid size={6}>
          {selectedWorkshop && !editMode && <WorkshopDetails cancelSelectWorkshop={cancelSelectWorkshop} openForm={openForm} workshop={selectedWorkshop} /> }
-         {editMode && <WorkshopForm closeForm={closeForm} workshop={selectedWorkshop}></WorkshopForm>}
+         {editMode && <WorkshopForm closeForm={closeForm} workshop={selectedWorkshop} submitForm = {submitForm}></WorkshopForm>}
       </Grid>
     </Grid>
   )

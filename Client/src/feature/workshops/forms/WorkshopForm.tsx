@@ -4,9 +4,10 @@ import {FormEvent} from "react"
 type Props ={
   workshop?: Workshop
   closeForm: () => void
+  submitForm: (workshop:Workshop) => void
 }
 
-export default function WorkshopForm({workshop,closeForm} :Props) {
+export default function WorkshopForm({workshop,closeForm, submitForm} :Props) {
 
   const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -15,7 +16,10 @@ export default function WorkshopForm({workshop,closeForm} :Props) {
     formData.forEach((value, key) => {
       data[key] = value
     })
-    console.log(data)
+    
+    if (workshop) data.id = workshop.id
+
+    submitForm(data as unknown as Workshop)
   }
 
   return (
